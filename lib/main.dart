@@ -8,7 +8,6 @@ import 'package:paipfood_app/app/views/auth/pin_code/pin_code_page.dart';
 import 'package:paipfood_app/app/views/auth/login/login_page.dart';
 import 'package:paipfood_app/app/views/home/home_page.dart';
 import 'package:flutter/services.dart';
-import 'package:paipfood_app/app/views/teste/teste_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         routes: {
           "home": (context) => const HomePage(),
-          "login": (context) => TestePage(),
+          "login": (context) => const LoginPage(),
           "adress": (context) => AdressPage(),
           "adressNickName": (context) => const AdressNickNamePage(),
           "phone": (context) => const PhonePage(),

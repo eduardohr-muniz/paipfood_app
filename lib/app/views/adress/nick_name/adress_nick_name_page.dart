@@ -46,7 +46,7 @@ class AdressNickNamePage extends StatelessWidget {
           ),
           floatingActionButton: FloatingActionButton(
               onPressed: () {
-                // user.name = "Muniz";
+                Navigator.of(context).pushNamed('home');
               },
               child: Icon(
                 Icons.chevron_right_outlined,

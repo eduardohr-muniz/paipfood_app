@@ -85,7 +85,7 @@ class _PinCodePageState extends State<PinCodePage> {
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
-            // user.name = "Muniz";
+            Navigator.of(context).pushNamed("adress");
           },
           child: Icon(
             Icons.chevron_right_outlined,
