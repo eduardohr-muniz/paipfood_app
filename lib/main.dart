@@ -8,6 +8,7 @@ import 'package:paipfood_app/app/views/auth/pin_code/pin_code_page.dart';
 import 'package:paipfood_app/app/views/auth/login/login_page.dart';
 import 'package:paipfood_app/app/views/home/home_page.dart';
 import 'package:flutter/services.dart';
+import 'package:paipfood_package/paipfood_package.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -27,8 +28,9 @@ class MyApp extends StatelessWidget {
       providers: Providers.providers,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeExt.lightTheme,
-        darkTheme: ThemeExt.darkTheme,
+        theme: ThemeCustom.lightTheme,
+        themeMode: ThemeMode.light,
+        darkTheme: ThemeCustom.darkTheme,
         title: 'Flutter Demo',
         routes: {
           "home": (context) => const HomePage(),

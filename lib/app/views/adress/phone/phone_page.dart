@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paipfood_app/app/core/extensions/mask_input.dart';
-import 'package:paipfood_app/app/core/extensions/themes/ext_theme.dart';
+// import 'package:paipfood_app/app/core/extensions/themes/ext_theme.dart';
+import 'package:paipfood_package/paipfood_package.dart';
 
 class PhonePage extends StatelessWidget {
   const PhonePage({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class PhonePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: context.primaryBgColor,
+        backgroundColor: context.color.primaryBG,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18),
@@ -30,14 +31,24 @@ class PhonePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Form(
-              child: TextFormField(
+              child: CwTextFormFild(
                 autofocus: true,
                 inputFormatters: maskInput.phonePtBr.formatter,
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(hintText: "(00) 0 0000-0000"),
-                textCapitalization: TextCapitalization.sentences,
+                hintText: "(00) 0 0000-0000",
+                obscureText: true,
+                // decoration: const InputDecoration(hintText: "(00) 0 0000-0000"),
+                // textCapitalization: TextCapitalization.sentences,
                 style: context.textTheme.titleLarge,
-              ),
+              ).underline(),
+            ),
+            TextFormField(
+              autofocus: true,
+              inputFormatters: maskInput.phonePtBr.formatter,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(hintText: "(00) 0 0000-0000"),
+              textCapitalization: TextCapitalization.sentences,
+              style: context.textTheme.titleLarge,
             ),
           ],
         ),
@@ -50,7 +61,7 @@ class PhonePage extends StatelessWidget {
           child: Icon(
             Icons.chevron_right_rounded,
             size: 40,
-            color: context.primaryColor,
+            color: context.color.primaryColor,
           )),
     );
   }

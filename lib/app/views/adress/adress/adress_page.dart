@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paipfood_app/app/core/extensions/mask_input.dart';
-import 'package:paipfood_app/app/core/extensions/themes/ext_theme.dart';
+import 'package:paipfood_package/paipfood_package.dart';
 
 class AdressPage extends StatelessWidget {
   AdressPage({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class AdressPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: context.primaryBgColor,
+        backgroundColor: context.color.primaryBG,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18),
@@ -24,12 +24,12 @@ class AdressPage extends StatelessWidget {
           children: [
             Text(
               "Qual é o seu endereço de entrega?",
-              style: context.textTheme.titleLarge,
+              style: context.textTheme.headlineMedium,
             ),
             const SizedBox(height: 10),
             Text(
               "Preencha os campos abaixo e deixe a entrega por nossa conta.",
-              style: context.textTheme.labelSmall,
+              style: context.textTheme.titleSmall!.muted(context),
             ),
             Form(
               key: _formKey,
@@ -58,11 +58,12 @@ class AdressPage extends StatelessWidget {
                       const SizedBox(height: 10),
                       Row(
                         children: [
-                          Expanded(
+                          const Expanded(
                             flex: 6,
-                            child: TextFormField(
-                              textCapitalization: TextCapitalization.sentences,
-                              decoration: const InputDecoration(label: Text("Rua")),
+                            child: CwTextFormFild(
+                              label: "Rua",
+                              // textCapitalization: TextCapitalization.sentences,
+                              // decoration: const InputDecoration(label: Text("Rua")),
                             ),
                           ),
                           const SizedBox(width: 20),
@@ -107,7 +108,7 @@ class AdressPage extends StatelessWidget {
           child: Icon(
             Icons.chevron_right_outlined,
             size: 40,
-            color: context.primaryColor,
+            color: context.color.primaryColor,
           )),
     );
   }
